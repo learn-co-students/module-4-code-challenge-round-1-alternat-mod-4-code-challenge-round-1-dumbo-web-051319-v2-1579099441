@@ -5,7 +5,14 @@ const Bookshelf = props => {
   return (
     <div>
       <h1>Book Shelf</h1>
-      <ul>{/*render list of books here*/}</ul>
+      <ul>{
+        props.bookShelf.map(book => {
+          return <Book 
+                    key={book.id}
+                    book={book}
+                    handleClick={props.handleClick}/>
+        })
+        }</ul>
     </div>
   );
 };
