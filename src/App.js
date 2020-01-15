@@ -20,6 +20,7 @@ class App extends Component {
     })
   }
 
+  //bonus -> bookshelf cannot add duplicate book
   addToBookShelf=(book)=>{
     if(!this.state.bookShelf.includes(book))
       {this.setState({
@@ -27,6 +28,8 @@ class App extends Component {
       })}
   }
 
+  //filter bookShelf to get rid of the book we pass in as argument
+    //setState of bookShelf to filteredBookShelf
   removeFromBookShelf=(book)=>{
     let filteredBookShelf = this.state.bookShelf.filter(b => {
       return b !==book
@@ -36,11 +39,20 @@ class App extends Component {
     })
   }
 
+  //spread operator to add my book into books array
   addBook=(myBook)=>{
     this.setState({
       books: [...this.state.books, myBook]
     })
   }
+
+  //not persisting
+  // onSubmit=(e,book)=>{
+  //   e.preventDefault()
+  //   this.setState({
+  //     books: [...this.state.books, book]
+  //   })
+  // }
 
   render() {
     console.log(this.state.books)
@@ -48,7 +60,8 @@ class App extends Component {
       <div className="book-container">
         <BookList books={this.state.books}
                   handleClick={this.addToBookShelf}
-                  addBook={this.addBook} />
+                  addBook={this.addBook} 
+                  onSubmit={this.onSubmit}/>
         <Bookshelf books={this.state.books}
                   bookShelf={this.state.bookShelf}
                   handleClick={this.removeFromBookShelf}/>

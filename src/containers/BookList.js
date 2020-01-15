@@ -7,11 +7,12 @@ class BookList extends Component {
     return (
       <div className="book-list">
         <h1>Book List</h1>
-        <Form addBook={this.props.addBook}/>
+        <Form addBook={this.props.addBook}
+              onSubmit={this.props.onSubmit}/>
         <ul>{ 
-            this.props.books.map(book =>{
+            this.props.books.map((book, indx )=>{
               return <Book 
-                        key={book.id} 
+                        key={indx}
                         book={book}
                         handleClick={this.props.handleClick}/>
             })

@@ -53,6 +53,18 @@
       "author": "Dale Carnegie",
       "img": "https://images.gr-assets.com/books/1442726934l/4865.jpg",
       "id": 9
+    },
+    {
+      "title": "The Obstacle is the Way",
+      "author": "Ryan Holiday",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/41d%2Baa6UYCL._SX352_BO1,204,203,200_.jpg",
+      "id": 10
+    },
+    {
+      "title": "Goodnight Moon",
+      "author": "Margaret Wise Brown",
+      "img": "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjUheHT_IXnAhVmmuAKHT6-CnkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.amazon.com%2FGoodnight-Moon-Margaret-Wise-Brown%2Fdp%2F0064430170&psig=AOvVaw3MGCgez3AmkVak45E6KRb8&ust=1579190356359748",
+      "id": 11
     }
   ]
 }

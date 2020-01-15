@@ -13,6 +13,7 @@ class Form extends React.Component {
     })
   }
 
+  //bonus persisting book form
    onSubmit=(e)=>{
     e.preventDefault()
     let {title, author, img} = this.state
@@ -35,26 +36,29 @@ class Form extends React.Component {
     })
   }
 
+  //for non persiting, onsubmits a prop passed down from App (where Books live)
+  //onSubmit= {e => this.props.onSubmit(e, this.state)}
   render() {
+    let { title, author, img } = this.state;
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={e => this.onSubmit(e, this.state)}>
         <input type="text" 
                 name="title" 
                 placeholder="Title" 
-                value={this.state.title}
+                value={title}
                 onChange={e => this.onChange(e)}/>
         <input type="text" 
                 placeholder="Author"
                 name="author" 
-                value={this.state.author}
+                value={author}
                 onChange={e => this.onChange(e)}/>
         <input type="text" 
                 placeholder="Image" 
                 name="img" 
-                value={this.state.img}
+                value={img}
                 onChange={e => this.onChange(e)}/>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
         </form>
       </div>
     )
